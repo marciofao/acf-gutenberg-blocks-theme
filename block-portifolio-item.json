@@ -1,0 +1,14 @@
+{
+    "name": "acf/portfolio-item",
+    "title": "Portfolio Item",
+    "description": "A custom block for portfolio items.",
+    "style": [ "file:./portifolio-item.css" ],
+    "category": "layout",
+    "icon": "excerpt-view",
+    "keywords": ["portfolio", "test"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-portfolio-item.php"
+    },
+    "align": "full"
+}
