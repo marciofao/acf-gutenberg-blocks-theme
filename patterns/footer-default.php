@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default Footer
- * Slug: twentytwentythree/footer-default
+ * Slug: agbtheme/footer-default
  * Categories: footer
  * Block Types: core/template-part/footer
  */
@@ -14,12 +14,12 @@
         <!-- wp:paragraph {"align":"right"} -->
         <p class="has-text-align-right">
             <?php
-			printf(
-				/* Translators: WordPress link. */
-				esc_html__('Proudly powered by %s', 'twentytwentythree'),
-				'<a href="' . esc_url(__('https://wordpress.org', 'twentytwentythree')) . '" rel="nofollow">WordPress</a>'
-			)
-				?>
+            printf(
+                /* Translators: WordPress link. */
+                esc_html__('Proudly powered by %s', 'agbtheme'),
+                '<a href="' . esc_url(__('https://wordpress.org', 'agbtheme')) . '" rel="nofollow">WordPress</a>'
+            )
+                ?>
         </p>
         <!-- /wp:paragraph -->
     </div>
