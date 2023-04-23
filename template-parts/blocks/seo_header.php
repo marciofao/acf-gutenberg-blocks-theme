@@ -15,12 +15,12 @@ if (!empty($block['align'])) {
 
 
 <!-- Spinner Start -->
-<!-- <div id="spinner"
+<div id="spinner"
     class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
         <span class="sr-only">Loading...</span>
     </div>
-</div> -->
+</div>
 <!-- Spinner End -->
 
 
@@ -30,7 +30,14 @@ if (!empty($block['align'])) {
     <!-- wp:group -->
     <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
 
-        <h1 class="m-0"><i class="fa fa-search me-2"></i>
+        <h1 class="m-0">
+            <?php
+             $custom_logo_id = get_theme_mod( 'custom_logo' );
+            $image = wp_get_attachment_image_src( $custom_logo_id );
+          
+            ?>
+            <img src="<?php echo $image[0] ?>" alt="">
+        <!-- <i class="fa fa-search me-2"></i> -->
             <?php echo get_bloginfo('name') ?>
         </h1>
 
@@ -77,8 +84,7 @@ if (!empty($block['align'])) {
                         
                             <a href="<?php echo $n->page ?>"
                             class="btn btn-secondary text-light rounded-pill py-2 px-4 ms-3"><?php echo $n->label ?></a>
-                      
-                  
+
                 <?php endforeach ?>
             <?php endif ?>
         </div>

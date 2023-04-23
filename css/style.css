@@ -524,3 +524,7 @@ body .wp-site-blocks{
 body .wp-site-blocks > * + * {
     margin-block-start: 0 !important;
 }
+
+.navbar h1 img{
+	height: 45px;
+}
