@@ -6,17 +6,19 @@
  * Block Types: core/template-part/navbar
  */
 ?>
-
+<!-- wp:group -->
 <!-- Spinner Start -->
-<div id="spinner"
+<!-- <div id="spinner"
     class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
         <span class="sr-only">Loading...</span>
     </div>
-</div>
+</div> -->
 <!-- Spinner End -->
-<!-- Navbar & Hero Start -->
+<!-- /wp:group -->
+
 <!-- wp:group -->
+<!-- Navbar & Hero Start -->
 <div class="container-xxl position-relative p-0">
     <!-- wp:group -->
     <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
@@ -70,10 +72,30 @@
                         Us</a>
                 </div>
                 <div class="col-lg-6 text-center text-lg-start">
-                    <img class="img-fluid" src="img/hero.png" alt="">
+                    <img class="img-fluid" src="<?php echo  get_template_directory_uri() ?>/img/hero.png" alt="">
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- /wp:group -->
+
+<!-- Full Screen Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
+            <div class="modal-header border-0">
+                <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center justify-content-center">
+                <div class="input-group" style="max-width: 600px;">
+                    <input type="text" class="form-control bg-transparent border-light p-3"
+                        placeholder="Type search keyword">
+                    <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Full Screen Search End -->
