@@ -2,19 +2,31 @@
 //die(get_stylesheet_directory() . 'blocks/block-portfolio-item.php');
 
 function agb_theme_setup() {
+    wp_enqueue_style('favicon', get_template_directory_uri() . '/img/favicon.ico', false, '1.1', 'all');
+    echo '    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">';
     /*
      * Load bootstrap and other css assets
      */
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', false, '1.1', 'all');
     wp_enqueue_style('font_awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css', false, '1.1', 'all');
 
-    wp_enqueue_style('default_css', get_template_directory_uri() . '/css/style.php', false, '1.1', 'all');
+    wp_enqueue_style('aimate', get_template_directory_uri() . '/lib/animate/animate.min.css', false, '1.1', 'all');
+    wp_enqueue_style('owl_carousel', get_template_directory_uri() . '/lib/owlcarousel/assets/owl.carousel.min.css', false, '1.1', 'all');
+    wp_enqueue_style('lightbox', get_template_directory_uri() . '/lib/lightbox/css/lightbox.min.css', false, '1.1', 'all');
 
 
+    wp_enqueue_style('default_css', get_template_directory_uri() . '/css/style.css', false, '1.1', 'all');
 
+   
+    
 
 }
-add_action('after_setup_theme', 'agb_theme_setup');
+add_action('wp_head', 'agb_theme_setup');
 
 function agb_js_setup() {
     echo '<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -26,8 +38,6 @@ function agb_js_setup() {
     wp_enqueue_script('owl', get_template_directory_uri() . '/lib/owlcarousel/owl.carousel.min.js', false, '1.1', 'true');
     wp_enqueue_script('iso', get_template_directory_uri() . '/lib/isotope/isotope.pkgd.min.js', false, '1.1', 'true');
     wp_enqueue_script('light', get_template_directory_uri() . '/lib/lightbox/js/lightbox.min.js', false, '1.1', 'true');
-    wp_enqueue_script( $handle:string, $src:string, $deps:array, $ver:string|boolean|null, $in_footer:boolean )
-
     wp_enqueue_script('scripts', get_template_directory_uri() . '/js/main.js', false, '1.1', 'true');
 
 }
