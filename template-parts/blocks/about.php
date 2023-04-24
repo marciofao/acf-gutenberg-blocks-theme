@@ -1,25 +1,25 @@
-<?php die( get_template_directory_uri()) ?>
+<?php //die( get_template_directory_uri()) ?>
 <!-- About Start -->
 <div class="container-xxl py-5">
     <div class="container px-lg-5">
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="section-title position-relative mb-4 pb-2">
-                    <h6 class="position-relative text-primary ps-4">About Us</h6>
-                    <h2 class="mt-2">The best SEO solution with 10 years of experience</h2>
+                    <h6 class="position-relative text-primary ps-4"><?php echo(get_field('about_title')) ?></h6>
+                    <h2 class="mt-2"><?php echo(get_field('about_line')) ?></h2>
                 </div>
-                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet
-                    diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita
-                    duo justo et tempor eirmod magna dolore erat amet</p>
+                <p class="mb-4"><?php echo(get_field('about_text')) ?></p>
                 <div class="row g-3">
-                    <div class="col-sm-6">
-                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Award Winning</h6>
-                        <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Professional Staff</h6>
-                    </div>
-                    <div class="col-sm-6">
-                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>24/7 Support</h6>
-                        <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Fair Prices</h6>
-                    </div>
+                    <?php if(get_field('about_items')) : ?> 
+                   
+                        <?php foreach(get_field('about_items') as $i ): ?>
+                            <?php $itm = (object) $i ?>
+                           
+                                <h6 class="col-6"><i class="fa fa-check text-primary me-2"></i> <?php echo $itm->label ?> </h6>
+    
+                        <?php endforeach ?> 
+                          
+                    <?php endif ?>
                 </div>
                 <div class="d-flex align-items-center mt-4">
                     <a class="btn btn-primary rounded-pill px-4 me-3" href="">Read More</a>

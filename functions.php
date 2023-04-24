@@ -26,7 +26,7 @@ function agb_theme_setup() {
     
 
 }
-add_action('after_setup_theme', 'agb_theme_setup');
+add_action('wp_head', 'agb_theme_setup');
 
 function agb_js_setup() {
     echo '<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -60,6 +60,18 @@ function register_acf_block_types() {
             'title'           => __('SEO Header'),
             'description'     => __('Site header'),
             'render_template' => 'template-parts/blocks/seo_header.php',
+            'icon'            => 'align-full-width',
+            'keywords'        => array('top', 'header')
+
+        )
+    );
+
+    acf_register_block_type(
+        array(
+            'name'            => 'Hero Header',
+            'title'           => __('Hero Header'),
+            'description'     => __('Hero header'),
+            'render_template' => 'template-parts/blocks/hero_header.php',
             'icon'            => 'align-full-width',
             'keywords'        => array('top', 'header')
 
