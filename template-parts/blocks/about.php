@@ -1,6 +1,16 @@
-<?php //die( get_template_directory_uri()) ?>
+<?php
+//block alignment setup
+$className = '';
+if (!empty($block['className'])) {
+    $className = ' ' . $block['className'];
+
+}
+if (!empty($block['align'])) {
+    $className .= 'align' . $block['align'];
+}
+?>
 <!-- About Start -->
-<div class="container-xxl py-5">
+<div class="container-xxl py-5 <?php echo esc_attr($className) ?>">
     <div class="container px-lg-5">
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
