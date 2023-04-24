@@ -1,5 +1,16 @@
+<?php
+//block alignment setup
+$className = '';
+if (!empty($block['className'])) {
+    $className = ' ' . $block['className'];
+
+}
+if (!empty($block['align'])) {
+    $className .= 'align' . $block['align'];
+}
+?>
  <!-- Footer Start -->
- <div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+ <div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn  <?php echo esc_attr($className) ?>" data-wow-delay="0.1s">
             <div class="container py-5 px-lg-5">
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-3">
