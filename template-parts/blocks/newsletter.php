@@ -1,5 +1,16 @@
+<?php
+//block alignment setup
+$className = '';
+if (!empty($block['className'])) {
+    $className = ' ' . $block['className'];
+
+}
+if (!empty($block['align'])) {
+    $className .= 'align' . $block['align'];
+}
+?>
 <!-- Newsletter Start -->
-<div class="container-xxl bg-primary newsletter my-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container-xxl bg-primary newsletter my-5 wow fadeInUp <?php echo esc_attr($className) ?>" data-wow-delay="0.1s">
             <div class="container px-lg-5">
                 <div class="row align-items-center" style="height: 250px;">
                     <div class="col-12 col-md-6">
